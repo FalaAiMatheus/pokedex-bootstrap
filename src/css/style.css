@@ -1,3 +1,13 @@
+:root{
+    ---light-gray: #acacac;
+    ---light-blue: #bad6e9;
+    ---white: #fff;
+    ---purple: #6610f2;
+    ---dark-purple: #5613c2;
+    ---gray: #dddddd;
+    ---shadow: rgba(0, 0, 0, 0.301);
+}
+
 .stats{
     display: flex;
     flex-direction: column;
@@ -6,27 +16,30 @@
     list-style: none;
 }
 .pokedex-top{
-    background-color: #fff;
+    background-color: var(---white);
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
+    box-shadow: 0px 0px 5px var(---shadow);
 }
 .btn-purple{
-    background-color: #6610f2;
+    background-color: var(---purple);
 }
 .btn-purple:hover,
 .btn-purple:active{
-    background-color: #5613c2;
+    background-color: var(---dark-purple);
 }
 .form-control::placeholder{
     color: #000;
 }
 .pokemon{
     border-radius: 4px;
-    border: 2px solid #00000027;
+    border: 2px solid var(---light-gray);
     padding: 1rem;
-    background-color: #dddddd;
+    background-color: var(---gray);
 }
 .screen{
-    background-color: #bad6e9;
+    background-color: var(---light-blue);
+}
+.progress.bg-grey{
+    background-color: var(---light-gray);
 }
