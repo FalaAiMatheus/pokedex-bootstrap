@@ -16,11 +16,14 @@
                         <h1 class="h1 text-dark">Pokedéx</h1>
                         <div class="control-pokedex d-flex gap-3">
                             <input type="text" class="form-control w-100 bg-white text-dark" id="inputPokemon" placeholder="ID ou Nome">
-                            <button class="btn btn-primary" type="submit">Buscar</button>
+                            <button class="btn btn-primary" type="submit" id="search-btn">Buscar</button>
                         </div>
                     </div>
+                    <div class="position-relative text-dark p-1">
+                        <h2>ID: <span class="id-poke" id="id-poke"></span></h2>
+                    </div>
                     <div class="pokemon d-flex flex-column gap-2">
-                        <img src="./src/img/bulbasaur.png" alt="Bulbasaur" class="pokemon img-fluid screen">
+                        <img src="./src/img/bulbasaur.png" alt="Bulbasaur" id="imgpoke" class="pokemon img-fluid screen">
                         <div class="tag-pokemon d-flex align-items-center justify-content-center gap-3">
                             <a class="btn btn-success" role="button" aria-disabled="false">GRAMA</a>
                             <a class="btn btn-purple" role="button" aria-disabled="false">POISON</a>
@@ -28,7 +31,7 @@
                     </div>
                     <div class="infos-pokemon">
                         <span id="id-poke" class="id-poke fs-2 text-white">#01</span>
-                        <span class="nome-poke fs-1 text-white">Bulbasaur</span>
+                        <span class="nome-poke fs-1 text-white" id="pokemon-name">Bulbasaur</span>
                         <ul class="stats bg-white d-flex gap-3  p-4 rounded">
                             <li class="stat d-flex flex-column">
                                 <span class="text-dark">HP: 45</span>
@@ -37,7 +40,7 @@
                                   </div>
                             </li>
                             <li class="stat d-flex flex-column">
-                                <span class="text-dark">ATK: 49</span>
+                                <span class="text-dark">ATK: <span id="hab-atk"></span></span>
                                 <div class="progress bg-grey" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                     <div class="progress-bar bg-danger" style="width: 49%"></div>
                                   </div>
@@ -65,5 +68,6 @@
             </div>
         </div>
     </div>
+    <script src="./src/js/script.js"></script>
 </body>
 </html>
