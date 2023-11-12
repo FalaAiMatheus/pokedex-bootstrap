@@ -4,7 +4,7 @@ const pokemonImage = document.getElementById('poke-img')
 const form = document.querySelector('form')
 const inputSearch = document.querySelector('input')
 
-const callAPI = async (pokemon) =>{
+async function callAPI(pokemon){
     const API = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     if(API.status == 200){
         const data = await API.json()
@@ -12,7 +12,7 @@ const callAPI = async (pokemon) =>{
     }
 }
 
-const renderPokemon = async (pokemon) =>{
+async function renderPokemon (pokemon){
     pokemonName.innerHTML = 'Loading...'
 
     const data = await callAPI(pokemon)
@@ -22,10 +22,13 @@ const renderPokemon = async (pokemon) =>{
         pokemonName.innerHTML = data.name;
         pokemonId.innerHTML = data.id;
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
         inputSearch.value = ''
     }
     else{
         pokemonName.innerHTML = 'Não encontrado'
+        pokemonId.innerHTML = ''
+        pokemonImage.src = ''
     }
 }
 
@@ -35,3 +38,6 @@ form.addEventListener('submit', (e) =>{
     console.log('Loading API..')
     renderPokemon(inputSearch.value.toLocaleLowerCase())
 })
+
+callAPI()
+renderPokemon('1')
