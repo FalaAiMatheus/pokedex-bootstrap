@@ -22,7 +22,6 @@ async function renderPokemon (pokemon){
         pokemonName.innerHTML = data.name;
         pokemonId.innerHTML = data.id;
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
-        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
         inputSearch.value = ''
     }
     else{
