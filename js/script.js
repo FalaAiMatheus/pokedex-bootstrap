@@ -1,31 +1,6 @@
-const pokemonName = document.getElementById('poke-name')
-const pokemonId = document.getElementById('poke-id')
-const pokemonImage = document.getElementById('poke-img')
 const form = document.querySelector('form')
 const inputSearch = document.querySelector('input')
 const btnSearch = document.querySelector('button')
-const firstTypePokemon = document.getElementById('first-type-poke')
-const secondTypePokemon = document.getElementById('second-type-poke')
-const colorsTypes ={
-    normal: '#ddd',
-    fire: '#D62E00',
-    water: '#2859FE',
-    grass: '#067D20',
-    flying: '#57C9C0',
-    fighting: '#C9265A',
-    poison: '#99267C',
-    electric: '#F2D027',
-    ground: '#8C4D38',
-    rock: '#525151',
-    psychic: '#E95AFF',
-    ice: '#45F7FE',
-    bug: '#73FF92',
-    ghost: '#695370',
-    steel: '#8C8C8C',
-    dragon: '#FF655F',
-    dark: '#563E57',
-    fairy: '#28734D'
-}
 
 async function callAPI(pokemon){
     const API = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
@@ -35,11 +10,19 @@ async function callAPI(pokemon){
     }
 }
 
+
 async function renderPokemon (pokemon){
+    const firstTypePokemon = document.getElementById('first-type-poke')
+    const secondTypePokemon = document.getElementById('second-type-poke')
+    const pokemonName = document.getElementById('poke-name')
+    const pokemonId = document.getElementById('poke-id')
+    const pokemonImage = document.getElementById('poke-img')
+    const statsPokeContainer = document.querySelector('.stats-poke')
+
     pokemonName.innerHTML = 'Loading...'
     
     const data = await callAPI(pokemon)
-    
+
     pokemonName.innerHTML = ''
     if(data){
         pokemonName.innerHTML = data.name;
@@ -48,8 +31,23 @@ async function renderPokemon (pokemon){
         pokemonImage.alt = data.name
         firstTypePokemon.innerHTML = data.types[0].type.name
         secondTypePokemon.innerHTML = data.types[1].type.name
+        statsPokeContainer.innerHTML = 
+        `
+        <section class="stats-poke"
+        <div class="stat d-flex">
+            <span>HP: ${data.stats[0].base_stat}</span>
+        </div>
+        <div class="stat">
+            <span>ATK: ${data.stats[1].base_stat}</span>
+        </div>
+        <div class="stat">
+            <span>DEF: ${data.stats[2].base_stat}</span>
+        </div>
+        </section>
+        `
+
         inputSearch.value = ''
-    }
+    }   
     else{
         pokemonName.innerHTML = 'Não encontrado'
         pokemonId.innerHTML = ''
