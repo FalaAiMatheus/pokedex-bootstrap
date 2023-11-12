@@ -3,6 +3,7 @@ const pokemonId = document.getElementById('poke-id')
 const pokemonImage = document.getElementById('poke-img')
 const form = document.querySelector('form')
 const inputSearch = document.querySelector('input')
+const btnSearch = document.querySelector('button')
 
 async function callAPI(pokemon){
     const API = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
@@ -14,14 +15,15 @@ async function callAPI(pokemon){
 
 async function renderPokemon (pokemon){
     pokemonName.innerHTML = 'Loading...'
-
+    
     const data = await callAPI(pokemon)
-
+    
     pokemonName.innerHTML = ''
     if(data){
         pokemonName.innerHTML = data.name;
-        pokemonId.innerHTML = data.id;
+        pokemonId.innerHTML = `#0${data.id}`;
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+        pokemonImage.alt = data.name
         inputSearch.value = ''
     }
     else{
