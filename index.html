@@ -11,28 +11,31 @@
     <div class="container d-flex align-items-center justify-content-center">
         <div class="content">
             <div class="pokedex-container container-fluid bg-danger d-flex align-items-center flex-column p-5 rounded gap-3">
-                <h1>Pokédex</h1>
-                <form class="search-pokemon">
-                    <input type="text" class="input-search" placeholder="Digite um ID ou Nome">
-                </form>
-                <img class="img-poke" src="" alt="" id="poke-img">
-                <div class="poke-info">
-                    <span class="poke-id" id="poke-id"></span>
-                    <span id="poke-name"></span>
-                    <div class="type-pokemon d-flex gap-3">
-                        <h2>
-                            <span class="badge bg-primary-subtle" id="first-badge">
-                                <span id="first-type-poke"></span>
-                            </span>
-                        </h2>
-                        <h2>
-                            <span class="badge bg-primary-subtle" id="second-badge">
-                                <span id="second-type-poke"></span>
-                            </span>
-                        </h2>
-                    </div>
+                <div class="poke-container border border-black d-flex align-items-center flex-column gap-3">
+                    <h1>Pokédex</h1>
+                    <form class="search-pokemon">
+                        <input type="text" class="input-search" placeholder="Digite um ID ou Nome">
+                    </form>
+                    <img class="img-poke" src="" alt="" id="poke-img">
+                    <div class="poke-info">
+                        <span class="poke-id" id="poke-id"></span>
+                        <span id="poke-name"></span>
+                        <div class="type-pokemon d-flex gap-3">
+                            <h2>
+                                <span class="badge bg-primary-subtle" id="first-badge">
+                                    <span id="first-type-poke"></span>
+                                </span>
+                            </h2>
+                            <h2>
+                                <span class="badge bg-primary-subtle" id="second-badge">
+                                    <span id="second-type-poke"></span>
+                                </span>
+                            </h2>
+                        </div>
                 </div>
+                <div class="line"></div>
                 <div class="stats-poke"></div>
+            </div>
             </div>
         </div>
     </div>
