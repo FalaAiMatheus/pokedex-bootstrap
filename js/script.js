@@ -10,7 +10,6 @@ async function callAPI(pokemon){
     }
 }
 
-
 async function renderPokemon (pokemon){
     const firstTypePokemon = document.getElementById('first-type-poke')
     const secondTypePokemon = document.getElementById('second-type-poke')
@@ -34,14 +33,14 @@ async function renderPokemon (pokemon){
         statsPokeContainer.innerHTML = 
         `
         <section class="stats-poke"
-        <div class="stat d-flex">
-            <span>HP: ${data.stats[0].base_stat}</span>
+        <div class="stat">
+            <span class="border border-black p-2 rounded bg-danger-subtle">HP: ${data.stats[0].base_stat}</span>
         </div>
         <div class="stat">
-            <span>ATK: ${data.stats[1].base_stat}</span>
+            <span class="border border-black p-2 rounded bg-danger">ATK: ${data.stats[1].base_stat}</span>
         </div>
         <div class="stat">
-            <span>DEF: ${data.stats[2].base_stat}</span>
+            <span class="border border-black p-2 rounded bg-info-subtle">DEF: ${data.stats[2].base_stat}</span>
         </div>
         </section>
         `
