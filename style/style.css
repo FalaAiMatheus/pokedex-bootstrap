@@ -12,7 +12,8 @@
     font-size: 1.09rem;
 }
 .img-poke{
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 .poke-info{
     font-size: 1.5rem;
@@ -21,4 +22,30 @@
 }
 .poke-id{
     font-weight: bold;
+}
+.stats-poke{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+}
+.stats-poke span{
+    border-radius: 1px solid #000;
+}
+.poke-container{
+    padding: 1.2rem;
+    border-radius: 4px;
+}
+.img-poke{
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 4px;
+}
+@media(max-width: 468px){
+    .stats-poke{
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
